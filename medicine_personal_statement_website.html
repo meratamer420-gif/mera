@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A personal portfolio about my interest in medicine, human anatomy, and compassionate patient care.">
+<title>My Path to Medicine | Personal Portfolio</title>
+<style>
+:root{--navy:#122c43;--teal:#287c7b;--mint:#e9f4f1;--ink:#263746;--muted:#657783;--paper:#fbfdfc;--line:#dce8e5;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"Segoe UI",Arial,sans-serif;line-height:1.7}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:10;background:rgba(251,253,252,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1120px;margin:auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:800;letter-spacing:.02em;color:var(--navy);text-decoration:none}
+.nav-links{display:flex;gap:22px;flex-wrap:wrap}
+.nav-links a{text-decoration:none;font-size:.9rem;color:var(--muted)}
+.nav-links a:hover{color:var(--teal)}
+.hero{background:linear-gradient(120deg,#eef7f5 0%,#fbfdfc 58%,#e4f0f0 100%);overflow:hidden}
+.hero-inner{max-width:1120px;margin:auto;padding:92px 24px 86px;display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}
+.eyebrow{text-transform:uppercase;letter-spacing:.17em;font-size:.75rem;font-weight:800;color:var(--teal)}
+h1{font-size:clamp(2.8rem,6vw,5rem);line-height:1.04;letter-spacing:-.055em;color:var(--navy);margin:18px 0 22px}
+.hero p{font-size:1.12rem;max-width:620px;color:#4d626e}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-block;text-decoration:none;border-radius:999px;padding:12px 20px;font-weight:700;font-size:.93rem}
+.btn-primary{background:var(--navy);color:white}
+.btn-secondary{border:1px solid #b8ceca;color:var(--navy);background:rgba(255,255,255,.7)}
+.visual{min-height:350px;display:flex;align-items:center;justify-content:center;position:relative}
+.orbit{width:min(330px,80vw);aspect-ratio:1;border:1px solid #bdd8d2;border-radius:50%;display:grid;place-items:center;position:relative}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #d0e3de;border-radius:50%}
+.orbit:before{inset:24px}.orbit:after{inset:52px}
+.med-icon{z-index:1;width:140px;height:140px;border-radius:36px;background:var(--navy);display:grid;place-items:center;box-shadow:0 20px 50px #122c4320}
+.float-card{position:absolute;background:white;border:1px solid var(--line);border-radius:16px;padding:13px 16px;box-shadow:0 12px 30px #173a4210;font-size:.88rem;font-weight:700;color:var(--navy)}
+.float-card small{display:block;font-weight:500;color:var(--muted)}
+.card-one{top:48px;right:0}.card-two{bottom:48px;left:0}
+section{padding:82px 24px}
+.container{max-width:1000px;margin:auto}
+.section-head{max-width:650px;margin-bottom:34px}
+.section-head h2{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.04em;color:var(--navy);line-height:1.15;margin:10px 0 14px}
+.section-head p{color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature{background:white;border:1px solid var(--line);border-radius:20px;padding:25px}
+.feature .number{font-size:.8rem;color:var(--teal);font-weight:800;letter-spacing:.1em}
+.feature h3{margin:10px 0 8px;color:var(--navy);font-size:1.15rem}
+.feature p{margin:0;color:var(--muted);font-size:.96rem}
+.story{background:var(--mint)}
+.story-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:54px;align-items:start}
+.quote{border-left:4px solid var(--teal);padding:10px 0 10px 22px;font-size:1.35rem;line-height:1.45;color:var(--navy);font-weight:650}
+.story-copy p{margin-top:0;color:#4d626e}
+.values{display:flex;gap:9px;flex-wrap:wrap;margin-top:24px}
+.pill{padding:7px 12px;border:1px solid #c6dcd6;background:#f8fcfa;border-radius:99px;font-size:.85rem;font-weight:700;color:#315d5a}
+.statement{max-width:820px}
+.statement h3{color:var(--navy);font-size:1.25rem;margin:32px 0 8px}
+.statement p{color:#4d626e;margin:0 0 18px}
+.callout{background:var(--navy);color:white;border-radius:24px;padding:38px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.callout h2{font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.15;margin:0 0 12px;letter-spacing:-.03em}
+.callout p{margin:0;color:#d5e5e7;max-width:600px}
+.callout .btn{background:white;color:var(--navy);white-space:nowrap}
+footer{padding:28px 24px;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
+.footer-inner{max-width:1000px;margin:auto;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.note{font-size:.84rem;color:var(--muted);margin-top:16px}
+@media(max-width:760px){.hero-inner,.story-layout{grid-template-columns:1fr}.hero-inner{padding-top:65px;gap:25px}.visual{min-height:300px}.grid{grid-template-columns:1fr}.nav-inner{align-items:flex-start;flex-direction:column;gap:8px}.nav-links{gap:14px}.callout{grid-template-columns:1fr}.callout .btn{justify-self:start}section{padding:60px 20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="brand" href="#home">MY PATH TO MEDICINE</a>
+    <div class="nav-links">
+      <a href="#about">About me</a><a href="#interests">My interests</a><a href="#story">My story</a><a href="#statement">Personal statement</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Future medical student · Personal portfolio</div>
+      <h1>Science with<br>compassion.</h1>
+      <p>I’m interested in how the human body works and how medical knowledge, careful thinking, and empathy can make a meaningful difference in people’s lives.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#statement">Read my personal statement</a>
+        <a class="btn btn-secondary" href="#about">Get to know me</a>
+      </div>
+    </div>
+    <div class="visual" aria-label="Decorative medical illustration">
+      <div class="orbit">
+        <div class="med-icon">
+          <svg width="92" height="92" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <path d="M50 82S17 62 17 37C17 17 42 13 50 34C58 13 83 17 83 37C83 62 50 82 50 82Z" stroke="#D9F0EA" stroke-width="5" stroke-linejoin="round"/>
+            <path d="M21 50H38L46 37L56 62L64 48H79" stroke="#67C5B3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="float-card card-one">Curiosity<small>Ask why. Keep learning.</small></div>
+        <div class="float-card card-two">Patient care<small>Listen first. Treat with care.</small></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">01 · About me</div>
+      <h2>What motivates me</h2>
+      <p>My goal is to become a doctor who combines scientific understanding with compassion and respect for every patient.</p>
+    </div>
+    <div class="grid">
+      <article class="feature"><div class="number">01 / CURIOSITY</div><h3>Understanding the body</h3><p>Biology has made me curious about how organs and body systems work together to keep us alive.</p></article>
+      <article class="feature"><div class="number">02 / DETERMINATION</div><h3>Working through challenges</h3><p>I enjoy staying with difficult concepts until I understand them, and I want to bring that persistence to medical study.</p></article>
+      <article class="feature"><div class="number">03 / EMPATHY</div><h3>Making people feel heard</h3><p>I believe good care means taking concerns seriously, listening without judgment, and helping patients feel comfortable asking questions.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="interests">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">02 · My interests</div>
+      <h2>Curiosity about the human body</h2>
+      <p>My interest in medicine comes from both the science behind the body and the human side of healthcare.</p>
+    </div>
+    <div class="grid">
+      <article class="feature"><div class="number">ANATOMY</div><h3>How the systems connect</h3><p>I’m fascinated by how the nervous, muscular, skeletal, and cardiovascular systems depend on one another.</p></article>
+      <article class="feature"><div class="number">PROBLEM-SOLVING</div><h3>Finding the cause</h3><p>Diagnosing a condition involves asking thoughtful questions, analysing symptoms, and considering different explanations.</p></article>
+      <article class="feature"><div class="number">WHOLE-PERSON CARE</div><h3>Physical and mental wellbeing</h3><p>I want to understand patients as people, recognising that their concerns and experiences deserve attention and respect.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="container story-layout">
+    <div>
+      <div class="eyebrow">03 · My story</div>
+      <div class="quote">“The kind of doctor I hope to become is someone who listens carefully and helps patients feel safe and understood.”</div>
+    </div>
+    <div class="story-copy">
+      <p>Doctors who took my concerns seriously helped shape the way I see healthcare. Their patience showed me that medicine is not only about identifying an illness; it is also about explaining, reassuring, and treating people with dignity.</p>
+      <p>My own experiences with anxiety and difficult periods in my life have made the importance of being heard especially meaningful to me. They have strengthened my determination to build a future where I can support others with both knowledge and empathy.</p>
+      <p>I know that becoming a doctor requires years of study, resilience, and the ability to think clearly under pressure. I am ready to keep learning, challenge myself, and work towards that responsibility.</p>
+      <div class="values"><span class="pill">Empathy</span><span class="pill">Curiosity</span><span class="pill">Perseverance</span><span class="pill">Critical thinking</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="statement">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">04 · Personal statement</div>
+      <h2>Why I want to study medicine</h2>
+      <p>A closer look at the experiences and interests behind my ambition.</p>
+    </div>
+    <div class="statement">
+      <h3>Where my interest began</h3>
+      <p>The value of medical expertise does not come only from diagnosing illnesses, but also from offering hope and understanding to people when they feel most vulnerable. My goal of pursuing medicine is rooted in my fascination with human anatomy and in the patience shown by the doctors who have supported me. They took my concerns seriously and helped me understand topics that I had questions about. What began as admiration for their knowledge and patience gradually became a curiosity of my own about medicine and the human body.</p>
+
+      <h3>Exploring the science</h3>
+      <p>That trust developed into an interest in the science behind medicine and how the human body functions. Biology has allowed me to explore this interest through the systems that work together to keep the body functioning. Even a simple action such as typing involves communication between the nervous system and the muscles, while bones provide support. Realising how many complex processes happen without conscious thought has deepened my fascination with anatomy. I am especially interested in the cardiovascular system because learning about the heart helped me understand how organs and systems depend on balance. I hope to move beyond textbooks and study human anatomy in a real medical setting, where I can develop a deeper understanding.</p>
+
+      <h3>Learning to think like a doctor</h3>
+      <p>My passion for medicine goes beyond understanding how the body works. I am also fascinated by how doctors investigate symptoms and work out what may be causing a problem. I enjoy working through difficult concepts until they make sense, and I want to apply that determination to medical problem-solving. Diagnosis involves more than recognising symptoms: it requires asking questions, thinking critically, and considering both physical and mental wellbeing. I want to develop these skills so I can help patients understand what they are experiencing and make sure their concerns are taken seriously.</p>
+
+      <h3>The doctor I hope to become</h3>
+      <p>My experiences with anxiety and difficult periods in my life have changed how I see my future. There were times when it was difficult to imagine reaching the point I am at today, which makes pursuing a goal I have had since childhood especially meaningful. I have come to understand how important it is to be heard without judgment. Doctors can offer reassurance and compassion to people when they feel vulnerable, and this has shaped the kind of doctor I hope to become: someone who listens carefully, takes concerns seriously, and helps patients feel comfortable discussing what they are going through.</p>
+
+      <h3>Looking ahead</h3>
+      <p>I understand that medicine requires years of dedicated study, resilience, and the ability to think clearly under pressure. Despite the challenges involved, I remain determined to develop the knowledge and skills needed to care for patients. Medicine brings together my fascination with anatomy and my desire to make a positive difference in people's lives. My experiences have taught me the importance of being heard and of persevering through challenges. My goal is to become a doctor who combines scientific knowledge with empathy, helping patients understand their conditions while making them feel safe and respected. To me, medicine is not only about understanding how the body functions; it is about using that knowledge to make a meaningful difference.</p>
+    </div>
+    <p class="note">Personalisation tip: add your real achievements, relevant school projects, volunteering, or science activities before submitting this portfolio to a university.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="callout">
+      <div><h2>My goal is to keep learning — and to care with purpose.</h2><p>I hope to grow into a medical professional who brings together curiosity, clear thinking, and compassion.</p></div>
+      <a class="btn" href="#home">Back to top ↑</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="footer-inner"><span>My Path to Medicine · Personal Portfolio</span><span>Created for a Grade 12 personal statement project</span></div></footer>
+</body>
+</html>
